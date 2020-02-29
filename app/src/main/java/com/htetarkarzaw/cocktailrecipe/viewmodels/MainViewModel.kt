@@ -8,11 +8,16 @@ import com.htetarkarzaw.cocktailrecipe.data.models.CocktailModel
 class MainViewModel: BaseViewModel() {
     private var mCocktailVOS: MutableLiveData<List<DrinkVO>>? = null
     init {
-        mCocktailVOS=MutableLiveData<List<DrinkVO>>()
+        mCocktailVOS=MutableLiveData()
+//        loadTest()
     }
 
     fun loadCocktails(type:String){
         CocktailModel.getInstance().loadCocktail(type,mCocktailVOS!!,errorLD!!)?.let { compositeDisposable.add(it) }
+    }
+
+    fun loadTest(request:String){
+        CocktailModel.getInstance().loadTest(request)
     }
 
     fun getCocktails(): LiveData<List<DrinkVO>> {

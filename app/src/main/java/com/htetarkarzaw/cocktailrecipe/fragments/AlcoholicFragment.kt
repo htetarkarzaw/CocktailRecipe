@@ -1,11 +1,10 @@
-package fragments
+package com.htetarkarzaw.cocktailrecipe.fragments
 
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
@@ -67,7 +66,40 @@ class AlcoholicFragment : BaseFragment(), ClickCocktailDelecate {
             this.context?.let { showAlert(it, "Sorry!", errorMessage!!, true, Runnable { getCocktail() }) }
             return@Observer
         })
+
+        val temp = HashMap<String,String>()
+        temp["FN"] = "CR"
+        temp["fromCustmer"] = "09400420034"
+        temp["name"] = "aung aung"
+        temp["email"] = "aung@gmail.com"
+        temp["lang"] = "EN"
+        temp["channel"] = "mobileApp"
+        temp["deviceModel"] = ""
+        temp["devicePlatform"] = ""
+        temp["deviceVersion"] = ""
+        temp["deviceManufacturer"] = ""
+        temp["packageName"] = ""
+        temp["versionNumber"] = ""
+        temp["isVirtualDevice"] = "true"
+        temp["geoLatitude"] = ""
+        temp["geoLongitude"] = ""
+        temp["appClientName"] = "Myanmar"
+        temp["appType"] = "PRODUCTION"
+        temp["deviceIP"] = ""
+        temp["uniqueDeviceKey"] = "1560840679390"
+        val request = mapToXml(temp)
+        viewModel.loadTest(request)
     }
+
+    private fun mapToXml(mMap:HashMap<String,String>):String{
+        var temp ="<?xml version=\"1.0\" encoding=\"UTF-8\" ?><Request "
+        for ((key, value) in mMap) {
+            temp+= "$key= \"$value\" "
+        }
+        temp+="></Request>"
+        return  temp
+    }
+
 
     private fun setupList(list: List<DrinkVO>?) {
         if (list != null) {

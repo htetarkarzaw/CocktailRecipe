@@ -20,11 +20,10 @@
             android:elevation="6dp"
             android:minHeight="?android:actionBarSize"
             app:tabSelectedTextColor="@color/colorPrimary"
-            app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+            app:tabBackground="@color/colorAccent"
             app:tabTextColor="@color/colorPrimary"
             android:background="@color/white"
             app:tabGravity="fill"
-            app:tabMaxWidth="0dp"
             app:tabMode="fixed"
             app:layout_constraintTop_toTopOf="parent"/>
     <androidx.viewpager.widget.ViewPager
@@ -34,6 +33,12 @@
             app:layout_constraintTop_toBottomOf="@id/tab_layout"
             app:layout_constraintBottom_toBottomOf="parent">
 
-    </androidx.viewpager.widget.ViewPager>
 
+    </androidx.viewpager.widget.ViewPager>
+<!--    <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/guideTabBar"-->
+<!--            android:text="သီဟိုဠ္မွ ဉာဏ္ႀကီးရွင္သည္ အာယုဝၯနေဆးၫႊန္းစာကို ဇလြန္ေဈးေဘး ဗာဒံပင္ထက္ အဓိ႒ာန္လ်က္ ဂဃနဏဖတ္ခဲ့သည္။"-->
+<!--            android:fontFamily="@font/pyidaungsu"/>-->
 </androidx.constraintlayout.widget.ConstraintLayout>

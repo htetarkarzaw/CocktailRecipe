@@ -1,4 +1,4 @@
-package fragments
+package com.htetarkarzaw.cocktailrecipe.fragments
 
 import android.content.Context
 import android.os.Bundle
